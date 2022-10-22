@@ -416,9 +416,8 @@
       &__sub{
         @extend %description-16;
         position: relative;
-
         transition: color 0.2s;
-        font-size: 1.4rem;
+        font-size: 1.55rem;
       }
 
       &__desc{
@@ -435,12 +434,13 @@
       a{
         color: $col-gray;
         transition: color 0.3s;
-        border-bottom: 2px solid;
+        text-decoration: underline;
         
         @media (any-pointer: fine) {
         &:hover {
         color: $col-orange;
         border-bottom: 0px;
+        text-decoration: none;
         transition: 0.3s;
       }
     }
@@ -639,15 +639,16 @@
 
     &__email {
       padding-top: 4.8rem;
-      padding-bottom: 7.2rem;
+      padding-bottom: 4.2rem;
       text-align: center;
 
       @include media("<=phone") {
-        max-width: 255px;
+        max-width: 310px;
         width: 100%;
         text-align: left;
         margin-left: auto;
-        word-break: break-word;
+        margin-right: auto;
+        
       }
 
       .to-copy {
@@ -717,18 +718,31 @@
     }
 
     @include media("<=phone") {
-      max-width: 255px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 370px;
       width: 100%;
     }
 
     &__left {
       display: flex;
+      justify-content: center;
       font-family: $font-sauce;
       @include media(">tablet") {
         left: 2.4rem;
         position: absolute;
         right: 0;
         top: 1rem;
+      }
+
+      @include media ("<=phone"){
+        margin-top: 2rem;
+      }
+
+      @include media (">phone"){
+        justify-content: flex-start;
       }
 
       .place {
@@ -785,7 +799,7 @@
           }
 
           @include media("<=phone") {
-            max-width: 255px;
+            max-width: 310px;
             width: 100%;
           }
 
